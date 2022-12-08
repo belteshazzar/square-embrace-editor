@@ -7,13 +7,7 @@
 import SwiftUI
 import WebKit
 
-#if os(iOS)
-typealias WebViewRepresentable = UIViewRepresentable
-#elseif os(macOS)
-typealias WebViewRepresentable = NSViewRepresentable
-#endif
-
-struct SqrmWebView: WebViewRepresentable {
+struct SqrmWebView: ViewRepresentable {
     static let html = Bundle.main.url(forResource: "html", withExtension: nil)!
     static let index = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "html")!
 
@@ -60,7 +54,7 @@ struct SqrmWebView: WebViewRepresentable {
     }
 
     func load(context: Context) -> WKWebView {
-        let _wkwebview = WKWebView(frame: .zero)//, configuration: configuration)
+        let _wkwebview = WKWebView(frame: .zero)
         _wkwebview.navigationDelegate = context.coordinator
         _wkwebview.loadFileURL(SqrmWebView.index, allowingReadAccessTo: SqrmWebView.html)
         return _wkwebview

@@ -10,22 +10,20 @@ import WebKit
 
 @main
 struct SqrmEditorApp: App {
-        
+    
     var body: some Scene {
         DocumentGroup(newDocument: SqrmDocument()) { file in
+#if os(macOS)
             HSplitView {
-                TextEditor(text: file.$document.text)
-                    .font(.system(.body, design: .monospaced))
+                EditorView(text: file.$document.text)
                 SqrmWebView(text: file.$document.text)
             }
-        }
-    }
-}
-
-extension NSTextView {
-    open override var frame: CGRect {
-        didSet {
-            self.isAutomaticQuoteSubstitutionEnabled = false
+#elseif os(iOS)
+            HStack {
+                EditorView(text: file.$document.text)
+                SqrmWebView(text: file.$document.text)
+            }
+#endif
         }
     }
 }
