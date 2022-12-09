@@ -23,12 +23,18 @@
 //  DEALINGS IN THE SOFTWARE.
 //
 
-import AppKit
+#if os(iOS)
+    import UIKit
+#elseif os(macOS)
+    import AppKit
+#endif
+
 import Foundation
 import ObjectiveC
 
 var LineNumberViewAssocObjKey: UInt8 = 0
 
+#if os(macOS)
 extension NSTextView {
     var lineNumberView:LineNumberRulerView {
         get {
@@ -153,3 +159,4 @@ class LineNumberRulerView: NSRulerView {
         }
     }
 }
+#endif

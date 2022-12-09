@@ -10,9 +10,13 @@ import SwiftUI
 struct EditorView: ViewRepresentable {
 
     @Binding var text: String
-
+    
+    let textStorage = TextStorage()
+        
 #if os(iOS)
     public func makeUIView(context: Context) -> UITextView {
+        
+        return UITextView()
     }
     
     public func updateUIView(_ uiView: UITextView, context: Context) {
@@ -20,15 +24,24 @@ struct EditorView: ViewRepresentable {
 #endif
     
 #if os(macOS)
+    
     public func makeNSView(context: Context) -> NSScrollView {
+
         let scrollView = NSTextView.scrollableTextView()
-        let textView = scrollView.documentView as? NSTextView
-        textView!.isRichText = false
-        textView!.delegate = context.coordinator
-        textView!.string = text
+
+        guard let textView = scrollView.documentView as? NSTextView else { return scrollView }
+
+        textView.allowsUndo = true
+        textView.isRichText = true
+
+        textStorage.addLayoutManager(textView.layoutManager!)
+        textView.textStorage?.setAttributedString(NSMutableAttributedString(string: text))
+
+        textView.delegate = context.coordinator
+
         scrollView.translatesAutoresizingMaskIntoConstraints = false
-        textView!.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .regular)
-        textView!.lnv_setUpLineNumberView()
+        textView.font = NSFont.monospacedSystemFont(ofSize: 12, weight: .regular)
+        textView.lnv_setUpLineNumberView()
         return scrollView
     }
     
@@ -48,7 +61,8 @@ struct EditorView: ViewRepresentable {
         }
          
         func textDidChange(_ notification: Notification) {
-            self.parent.text = (notification.object as! NSTextView) .string
+            guard let textView = notification.object as? NSTextView else {return}
+            self.parent.text = textView.string
         }
     }
 

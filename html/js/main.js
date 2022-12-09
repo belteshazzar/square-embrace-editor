@@ -4,8 +4,6 @@ function render(str) {
     if (str == undefined) return
 
     let result = sqrm(str)
-        
-    console.log(result)
     
     let html,json;
     if (result.docs !== undefined && Array.isArray(result.docs)) {
@@ -23,5 +21,6 @@ function render(str) {
     let sanitized = DOMPurify.sanitize(html);
     
     document.body.innerHTML = sanitized
-
+    
+    return json
 }

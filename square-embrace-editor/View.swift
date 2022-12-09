@@ -7,12 +7,6 @@
 
 import SwiftUI
 
-#if os(iOS)
-typealias ViewRepresentable = UIViewRepresentable
-#elseif os(macOS)
-typealias ViewRepresentable = NSViewRepresentable
-#endif
-
 #if os(macOS)
 extension NSTextView {
     open override var frame: CGRect {

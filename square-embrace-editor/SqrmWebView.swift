@@ -20,7 +20,7 @@ struct SqrmWebView: ViewRepresentable {
         update(uiView, context: context)
     }
 #endif
-    
+
 #if os(macOS)
     public func makeNSView(context: Context) -> WKWebView {
         load(context: context)
@@ -71,6 +71,10 @@ struct SqrmWebView: ViewRepresentable {
             .replacingOccurrences(of: "“", with: "\"", options: .literal, range: nil)
             .replacingOccurrences(of: "\"", with: "\\\"", options: .literal, range: nil)
 
-        webView.evaluateJavaScript("render(\"\(newString)\")")
+        webView.evaluateJavaScript("render(\"\(newString)\")") {result,error in
+            
+            print(result as Any)
+            print(error as Any)
+        }
     }
 }
