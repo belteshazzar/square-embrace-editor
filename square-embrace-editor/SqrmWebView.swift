@@ -7,7 +7,7 @@
 import SwiftUI
 import WebKit
 
-struct SqrmWebView: ViewRepresentable {
+struct SqrmWebView: XViewRepresentable {
     static let html = Bundle.main.url(forResource: "html", withExtension: nil)!
     static let index = Bundle.main.url(forResource: "index", withExtension: "html", subdirectory: "html")!
 

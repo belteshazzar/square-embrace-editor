@@ -13,7 +13,7 @@ import Foundation
     import AppKit
 #endif
 
-public class TextStorage: NSTextStorage {
+public class HighlightingTextStorage: NSTextStorage {
 
     // The underlying text storage implementation.
     var backingStore = NSTextStorage()
@@ -102,6 +102,7 @@ public class TextStorage: NSTextStorage {
     ///
     override public func processEditing() {
 //        let backingString = backingStore.string
+        print("process editing")
         self.syntaxHighlighter.colorize(self.backingStore,range: editedRange)
         super.processEditing()
     }

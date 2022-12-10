@@ -7,18 +7,94 @@
 
 import SwiftUI
 
-struct EditorView: ViewRepresentable {
+
+struct EditorView: XViewRepresentable {
 
     @Binding var text: String
     
-    let textStorage = TextStorage()
+    let textStorage = HighlightingTextStorage()
         
+    func makeCoordinator() -> Coordinator {
+         return Coordinator(self)
+     }
+
 #if os(iOS)
+    
+    
     public func makeUIView(context: Context) -> UITextView {
+
+        print(context.coordinator.parent)
+//        let layoutManager = NSLayoutManager()
+//        let container = NSTextContainer()
+//        layoutManager.addTextContainer(container)
+//        textStorage.addLayoutManager(layoutManager)
         
-        return UITextView()
+
+        let layoutManager = NSLayoutManager()
+        textStorage.addLayoutManager(layoutManager)
+
+        let textContainer = NSTextContainer()
+        textContainer.widthTracksTextView  = true // those are key!
+        layoutManager.addTextContainer(textContainer)        
+
+        let textView = UITextView(frame: .zero, textContainer: textContainer)
+        textView.smartDashesType = .no;
+        textView.smartQuotesType = .no;
+        textView.smartInsertDeleteType = .no
+        textView.delegate = context.coordinator
+
+//        textStorage.addLayoutManager(textView.layoutManager)
+//        textStorage.setAttributedString(NSMutableAttributedString(string: text))
+
+//        let textContainer = NSTextContainer(size: view.bounds.size)
+//            layoutManager.addTextContainer(textContainer)
+        
+        print(self.text)
+        textView.text = self.text
+        
+        
+//        textView.text = self.text
+//        textView.delegate = delegate
+
+        
+//        textStorage.addLayoutManager(textView.layoutManager)
+//                textStorage.setAttributedString(NSMutableAttributedString(string: text))
+
+        print("set")
+        print(text)
+        print("set storage string")
+//        print(context)
+//        textView.delegate = self.delegate
+
+        textView.font = UIFont.monospacedSystemFont(ofSize: 16, weight: .regular)
+//        textView.lnv_setUpLineNumberView()
+
+        print("here")
+        return textView
     }
     
+    class Coordinator: NSObject, UITextViewDelegate {
+        var parent: EditorView
+         
+        init(_ parent: EditorView) {
+            self.parent = parent
+        }
+         
+        func textViewDidChange(_ textView: UITextView) {
+            print("text view did change")
+            print(textView.text as Any)
+            self.parent.text = textView.text
+        }
+         
+        func textDidChange(_ notification: Notification) {
+            guard let textView = notification.object as? UITextView else {return}
+            
+            print("text did change")
+            self.parent.text = textView.text
+        }
+    }
+
+        
     public func updateUIView(_ uiView: UITextView, context: Context) {
     }
 #endif
@@ -45,10 +121,7 @@ struct EditorView: ViewRepresentable {
         return scrollView
     }
     
-    func makeCoordinator() -> Coordinator {
-        return Coordinator(self)
-    }
-     
+   
     class Coordinator: NSObject, NSTextViewDelegate {
         var parent: EditorView
          

@@ -9,13 +9,12 @@
 /* Begin PBXBuildFile section */
 		652B21F92938ABE900C003C4 /* SqrmWebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 652B21F82938ABE900C003C4 /* SqrmWebView.swift */; };
 		655C1441294311660012BCD3 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C1440294311650012BCD3 /* String.swift */; };
-		655C1443294347A00012BCD3 /* TextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C1442294347A00012BCD3 /* TextStorage.swift */; };
-		655C1445294348E10012BCD3 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C1444294348E10012BCD3 /* Types.swift */; };
+		655C1443294347A00012BCD3 /* HighlightingTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C1442294347A00012BCD3 /* HighlightingTextStorage.swift */; };
+		655C1445294348E10012BCD3 /* XTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C1444294348E10012BCD3 /* XTypes.swift */; };
 		655C1447294349610012BCD3 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655C1446294349610012BCD3 /* Color.swift */; };
 		6560992B2941962300C4C060 /* LineNumberRulerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560992A2941962300C4C060 /* LineNumberRulerView.swift */; };
 		6560992D2941C10700C4C060 /* EditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560992C2941C10700C4C060 /* EditorView.swift */; };
 		6560992F2941C12000C4C060 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6560992E2941C12000C4C060 /* View.swift */; };
-		656099322941DB2300C4C060 /* Sourceful in Frameworks */ = {isa = PBXBuildFile; productRef = 656099312941DB2300C4C060 /* Sourceful */; };
 		656099342941E2C900C4C060 /* SyntaxHighlighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656099332941E2C900C4C060 /* SyntaxHighlighter.swift */; };
 		65676BC429346769002841B1 /* SqrmEditorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65676BC329346769002841B1 /* SqrmEditorApp.swift */; };
 		65676BC629346769002841B1 /* SqrmDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65676BC529346769002841B1 /* SqrmDocument.swift */; };
@@ -47,14 +46,14 @@
 /* Begin PBXFileReference section */
 		652B21F82938ABE900C003C4 /* SqrmWebView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqrmWebView.swift; sourceTree = "<group>"; };
 		655C1440294311650012BCD3 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		655C1442294347A00012BCD3 /* TextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextStorage.swift; sourceTree = "<group>"; };
-		655C1444294348E10012BCD3 /* Types.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		655C1442294347A00012BCD3 /* HighlightingTextStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HighlightingTextStorage.swift; sourceTree = "<group>"; };
+		655C1444294348E10012BCD3 /* XTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XTypes.swift; sourceTree = "<group>"; };
 		655C1446294349610012BCD3 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		6560992A2941962300C4C060 /* LineNumberRulerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberRulerView.swift; sourceTree = "<group>"; };
 		6560992C2941C10700C4C060 /* EditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorView.swift; sourceTree = "<group>"; };
 		6560992E2941C12000C4C060 /* View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		656099332941E2C900C4C060 /* SyntaxHighlighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SyntaxHighlighter.swift; sourceTree = "<group>"; };
-		65676BC029346769002841B1 /* square-embrace-editor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "square-embrace-editor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		65676BC029346769002841B1 /* Square Embrace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Square Embrace.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65676BC329346769002841B1 /* SqrmEditorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqrmEditorApp.swift; sourceTree = "<group>"; };
 		65676BC529346769002841B1 /* SqrmDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SqrmDocument.swift; sourceTree = "<group>"; };
 		65676BC92934676A002841B1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,7 +73,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				656099322941DB2300C4C060 /* Sourceful in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,7 +107,7 @@
 		65676BC129346769002841B1 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				65676BC029346769002841B1 /* square-embrace-editor.app */,
+				65676BC029346769002841B1 /* Square Embrace.app */,
 				65676BD42934676A002841B1 /* square-embrace-editorTests.xctest */,
 				65676BDE2934676A002841B1 /* square-embrace-editorUITests.xctest */,
 			);
@@ -127,8 +125,8 @@
 				65676BC529346769002841B1 /* SqrmDocument.swift */,
 				65676BC329346769002841B1 /* SqrmEditorApp.swift */,
 				652B21F82938ABE900C003C4 /* SqrmWebView.swift */,
-				655C1442294347A00012BCD3 /* TextStorage.swift */,
-				655C1444294348E10012BCD3 /* Types.swift */,
+				655C1442294347A00012BCD3 /* HighlightingTextStorage.swift */,
+				655C1444294348E10012BCD3 /* XTypes.swift */,
 				6560992E2941C12000C4C060 /* View.swift */,
 				65676BC92934676A002841B1 /* Assets.xcassets */,
 				65676BCB2934676A002841B1 /* Info.plist */,
@@ -180,10 +178,9 @@
 			);
 			name = "square-embrace-editor";
 			packageProductDependencies = (
-				656099312941DB2300C4C060 /* Sourceful */,
 			);
 			productName = "square-embrace-editor";
-			productReference = 65676BC029346769002841B1 /* square-embrace-editor.app */;
+			productReference = 65676BC029346769002841B1 /* Square Embrace.app */;
 			productType = "com.apple.product-type.application";
 		};
 		65676BD32934676A002841B1 /* square-embrace-editorTests */ = {
@@ -255,7 +252,6 @@
 			);
 			mainGroup = 65676BB729346769002841B1;
 			packageReferences = (
-				656099302941DB2300C4C060 /* XCRemoteSwiftPackageReference "Sourceful" */,
 			);
 			productRefGroup = 65676BC129346769002841B1 /* Products */;
 			projectDirPath = "";
@@ -304,9 +300,9 @@
 				65676BC629346769002841B1 /* SqrmDocument.swift in Sources */,
 				655C1447294349610012BCD3 /* Color.swift in Sources */,
 				652B21F92938ABE900C003C4 /* SqrmWebView.swift in Sources */,
-				655C1445294348E10012BCD3 /* Types.swift in Sources */,
+				655C1445294348E10012BCD3 /* XTypes.swift in Sources */,
 				6560992B2941962300C4C060 /* LineNumberRulerView.swift in Sources */,
-				655C1443294347A00012BCD3 /* TextStorage.swift in Sources */,
+				655C1443294347A00012BCD3 /* HighlightingTextStorage.swift in Sources */,
 				65676BC429346769002841B1 /* SqrmEditorApp.swift in Sources */,
 				6560992F2941C12000C4C060 /* View.swift in Sources */,
 				656099342941E2C900C4C060 /* SyntaxHighlighter.swift in Sources */,
@@ -489,7 +485,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.belteshazzar.square-embrace-editor";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Square Embrace";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -531,7 +527,7 @@
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "au.com.belteshazzar.square-embrace-editor";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Square Embrace";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -670,25 +666,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		656099302941DB2300C4C060 /* XCRemoteSwiftPackageReference "Sourceful" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/twostraws/Sourceful.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 0.4.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		656099312941DB2300C4C060 /* Sourceful */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = 656099302941DB2300C4C060 /* XCRemoteSwiftPackageReference "Sourceful" */;
-			productName = Sourceful;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 65676BB829346769002841B1 /* Project object */;
 }

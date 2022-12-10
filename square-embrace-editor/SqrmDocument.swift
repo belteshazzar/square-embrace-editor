@@ -21,7 +21,7 @@ protocol SqrmObserver : AnyObject {
 struct SqrmDocument: FileDocument {
     var text: String
 
-    init(text: String = "Hello, world!\nFred was here") {
+    init(text: String = "") {
         self.text = text
     }
 

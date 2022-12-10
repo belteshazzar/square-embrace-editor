@@ -17,7 +17,7 @@ import Foundation
 class LineMatch {
     let name : String
     let regex : NSRegularExpression
-    let color : [NSAttributedString.Key : Color]
+    let color : [NSAttributedString.Key : XColor]
     
     static func regex(_ re : String) -> NSRegularExpression {
         return try! NSRegularExpression(pattern: re, options: [NSRegularExpression.Options.anchorsMatchLines])
@@ -26,7 +26,7 @@ class LineMatch {
     init(name: String, regex: String, r: CGFloat, g: CGFloat, b: CGFloat) {
         self.name = name
         self.regex = LineMatch.regex(regex)
-        self.color = [NSAttributedString.Key.foregroundColor: Color(red: r, green: g, blue: b, alpha: 1.0)]
+        self.color = [NSAttributedString.Key.foregroundColor: XColor(red: r, green: g, blue: b, alpha: 1.0)]
     }
 }
 

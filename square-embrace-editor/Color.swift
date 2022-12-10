@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Color {
+extension XColor {
     
     /// Converts a hex color code to UIColor.
     /// http://stackoverflow.com/a/33397427/6669540
