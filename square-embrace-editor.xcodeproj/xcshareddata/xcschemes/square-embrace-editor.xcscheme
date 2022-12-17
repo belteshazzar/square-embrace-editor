@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "65676BBF29346769002841B1"
-               BuildableName = "square-embrace-editor.app"
+               BuildableName = "Square Embrace.app"
                BlueprintName = "square-embrace-editor"
                ReferencedContainer = "container:square-embrace-editor.xcodeproj">
             </BuildableReference>
@@ -67,7 +67,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65676BBF29346769002841B1"
-            BuildableName = "square-embrace-editor.app"
+            BuildableName = "Square Embrace.app"
             BlueprintName = "square-embrace-editor"
             ReferencedContainer = "container:square-embrace-editor.xcodeproj">
          </BuildableReference>
@@ -91,7 +91,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "65676BBF29346769002841B1"
-            BuildableName = "square-embrace-editor.app"
+            BuildableName = "Square Embrace.app"
             BlueprintName = "square-embrace-editor"
             ReferencedContainer = "container:square-embrace-editor.xcodeproj">
          </BuildableReference>

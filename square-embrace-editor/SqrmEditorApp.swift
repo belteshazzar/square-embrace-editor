@@ -7,6 +7,7 @@
 
 import SwiftUI
 import WebKit
+import square_embrace_swiftui
 
 @main
 struct SqrmEditorApp: App {

@@ -1,6 +1,6 @@
 //
 //  Types.swift
-//  square-embrace-editor
+//  square-embrace-swiftui
 //
 //  Created by Daniel Walton on 9/12/2022.
 //
